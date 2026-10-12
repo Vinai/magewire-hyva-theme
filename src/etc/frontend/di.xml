@@ -6,7 +6,7 @@
         <arguments>
             <argument name="items" xsi:type="array">
                 <item name="magewire_bc_browser_events" xsi:type="array">
-                    <item name="type" xsi:type="string">Magewirephp\MagewireHyvaTheme\Features\SupportMagewireBackwardsCompatibility\SupportBrowserEvents</item>
+                    <item name="type" xsi:type="string">Magewirephp\MagewireHyvaTheme\Features\SupportMagewireBackwardsCompatibility\SupportDispatchBrowserEvent</item>
                     <item name="sort_order" xsi:type="number">1660</item>
                 </item>
             </argument>

@@ -18,7 +18,7 @@ use Magewirephp\Magewire\Mechanisms\HandleComponents\ComponentContext;
  * Sends events from the deprecated dispatchBrowserEvent() apart from Livewire's dispatches,
  * so the frontend can deliver their payload in the Magewire 1 shape.
  */
-class SupportBrowserEvents extends ComponentHook
+class SupportDispatchBrowserEvent extends ComponentHook
 {
     public function dehydrate(ComponentContext $context): void
     {

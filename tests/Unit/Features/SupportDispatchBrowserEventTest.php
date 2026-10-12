@@ -12,12 +12,12 @@ use Magewirephp\Magewire\Mechanisms\DataStore;
 use Magewirephp\Magewire\Mechanisms\HandleComponents\ComponentContext;
 use Magewirephp\Magewire\Mechanisms\HandleComponents\ComponentContext\Effects;
 use Magewirephp\Magewire\Mechanisms\HandleComponents\ComponentContext\Memo;
-use Magewirephp\MagewireHyvaTheme\Features\SupportMagewireBackwardsCompatibility\SupportBrowserEvents;
+use Magewirephp\MagewireHyvaTheme\Features\SupportMagewireBackwardsCompatibility\SupportDispatchBrowserEvent;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 use ReflectionProperty;
 
-class SupportBrowserEventsTest extends TestCase
+class SupportDispatchBrowserEventTest extends TestCase
 {
     private ObjectManagerInterface|null $previousObjectManager = null;
 
@@ -75,7 +75,7 @@ class SupportBrowserEventsTest extends TestCase
     private function dehydrate(Component $component): array
     {
         $context = new ComponentContext(null, $component, false, new Effects(), new Memo());
-        $hook = new SupportBrowserEvents();
+        $hook = new SupportDispatchBrowserEvent();
         $hook->setComponent($component);
         $hook->dehydrate($context);
 
