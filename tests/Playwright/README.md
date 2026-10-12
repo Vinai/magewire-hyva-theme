@@ -15,3 +15,9 @@ this module.
 The UI compatibility test reuses Magewire core's `/magewire/playwright/ui` workbench. Open that
 route directly to inspect the compiled Hyvä presentation manually; the notifications remain visible
 until dismissed by default. This fixture is available with Magewire 3.7 and newer.
+
+The browser-event compatibility tests use this module's
+`/magewire/playwright/backwardscompatibility` fixture. They verify Magewire 1 payload shapes
+from `dispatchBrowserEvent()` and Livewire 3 payload shapes from `dispatch()` on the same
+BC-enabled component. This requires the core browser-event queue change from
+[Magewire PR #326](https://github.com/magewirephp/magewire/pull/326), released before this module.
