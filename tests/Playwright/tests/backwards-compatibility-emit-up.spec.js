@@ -1,9 +1,9 @@
 import { test, expect } from '@playwright/test';
 
-const PATH = '/magewire/playwright/emitup';
+const PATH = '/magewire/playwright/backwardscompatibility';
 const NAMES = ['grandparent', 'parent', 'child', 'sibling', 'stranger'];
 
-const node = (page, name) => page.getByTestId(`magewire-hyva.playwright.emit-up.${name}`);
+const node = (page, name) => page.getByTestId(`magewire-hyva.playwright.backwards_compatibility.emit_up.${name}`);
 const own = (page, name, testId) => node(page, name).locator(`:scope > [data-testid="${testId}"]`);
 const received = async page => Object.fromEntries(
     await Promise.all(NAMES.map(async name => [name, await own(page, name, 'received').textContent()]))
@@ -13,7 +13,7 @@ test.describe('Magewire Hyvä Playwright — Backwards Compatibility — Emit Up
     test.beforeEach(async ({ page }) => {
         await page.goto(`${PATH}?v=${Math.floor(Math.random() * 1_000_000)}`);
         await page.waitForFunction(names => names.every(
-            name => window.Magewire?.find?.(`magewire-hyva.playwright.emit-up.${name}`)
+            name => window.Magewire?.find?.(`magewire-hyva.playwright.backwards_compatibility.emit_up.${name}`)
         ), NAMES);
     });
 

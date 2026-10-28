@@ -11,11 +11,11 @@ declare(strict_types=1);
 
 use Magento\Framework\Escaper;
 use Magento\Framework\View\Element\Template;
-use Magewirephp\MagewireHyvaTheme\Magewire\Playwright\BackwardsCompatibility\EmitUp\Node;
+use Magewirephp\MagewireHyvaTheme\Magewire\Playwright\BackwardsCompatibility\EmitUp;
 
 /** @var Template $block */
 /** @var Escaper $escaper */
-/** @var Node $magewire */
+/** @var EmitUp $magewire */
 ?>
 <div data-testid="<?= $escaper->escapeHtmlAttr($block->getNameInLayout()) ?>">
     <p data-testid="received"><?= (int) $magewire->received ?></p>

@@ -9,7 +9,7 @@
 
 declare(strict_types=1);
 
-namespace Magewirephp\MagewireHyvaTheme\Magewire\Playwright\BackwardsCompatibility\EmitUp;
+namespace Magewirephp\MagewireHyvaTheme\Magewire\Playwright\BackwardsCompatibility;
 
 use Magewirephp\Magewire\Component;
 use Magewirephp\Magewire\Features\SupportMagewireBackwardsCompatibility\HandleBackwardsCompatibility;
@@ -19,7 +19,7 @@ use Magewirephp\Magewire\Features\SupportMagewireBackwardsCompatibility\HandleBa
  * listener, so a re-render can only come from emitToRefreshUp().
  */
 #[HandleBackwardsCompatibility]
-class Node extends Component
+class EmitUp extends Component
 {
     public int $received = 0;
 
@@ -39,7 +39,7 @@ class Node extends Component
 
     public function pickStranger(): void
     {
-        $this->emitUp('node:picked')->to('magewire-hyva.playwright.emit-up.stranger');
+        $this->emitUp('node:picked')->to('magewire-hyva.playwright.backwards_compatibility.emit_up.stranger');
     }
 
     public function refreshUp(): void
